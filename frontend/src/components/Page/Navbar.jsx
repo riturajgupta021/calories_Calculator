@@ -13,20 +13,20 @@ const Navbar = ({ onSearch }) => {
   };
 
   return (
-    <nav className="bg-white shadow-md fixed w-full top-0 left-0 z-50 border-b border-gray-200">
+    <nav className=" shadow-md fixed w-full top-3  left-0 z-50 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Company Name */}
           <div className="flex items-center space-x-4">
             <img
-              src="public/Logo.png"
+              src="/Logo.png"
               alt="Company Logo"
               className="h-10 w-[100px] object-contain rounded-lg"
             />
           </div>
 
           {/* Desktop Search Bar */}
-          <div className="hidden md:flex flex-1 max-w-lg mx-6">
+          <div className="hidden md:flex flex-1 max-w-sm mx-6">
             <div className="relative w-full">
               <input
                 type="text"
@@ -41,11 +41,11 @@ const Navbar = ({ onSearch }) => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            <a href="/about" className="text-gray-600 hover:text-blue-600 transition duration-300">
+            <a href="/about" className="text-white hover:text-blue-600 transition duration-300">
               About
             </a>
             <div className="relative">
-              <a href="/cart" className="text-gray-600 hover:text-blue-600 transition duration-300 flex items-center">
+              <a href="/cart" className="text-white hover:text-blue-600 transition duration-300 flex items-center">
                 <ShoppingCart className="h-6 w-6 mr-2" />
                 {cartCount > 0 && (
                   <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">

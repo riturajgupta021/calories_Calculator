@@ -27,16 +27,8 @@ const HomePage = () => {
         setLoading(false);
       });
 
-    // Option 2: Server-side search implementation
-    // if (searchTerm) {
-    //   fetch(`http://localhost:5000/api/dish/search?q=${searchTerm}`)
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //       setDishes(data.dishdata || []);
-    //       setLoading(false);
-    //     });
-    // }
-  }, [/* searchTerm */]); // Uncomment searchTerm dependency for server-side search
+   
+  }, []); 
 
   // Filter dishes based on search term (client-side search)
   const filteredDishes = dishes.filter((dish) =>
@@ -62,19 +54,20 @@ const HomePage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen ">
       {/* Enhanced Navbar */}
       <Navbar/>
 
       {/* Hero Section */}
-      <div className="bg-blue-600 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mt-[50px]">
-            Discover Healthy Dishes
-          </h2>
-          <p className="text-lg text-blue-100 mb-8">
-            Track your calories and maintain a healthy lifestyle
-          </p>
+      <div className=" text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 text-center mt-[100px] ">
+        <h1 className="text-4xl md:text-6xl font-extrabold mt-[60px] mb-6 font-serif">
+          Know Your Calories
+        </h1>
+        
+        <p className="text-xl md:text-2xl font-light mb-6 text-gray-200 font-serif">
+          "Knowledge of what you eat is the first step towards a healthier you"
+        </p>
         </div>
       </div>
 
