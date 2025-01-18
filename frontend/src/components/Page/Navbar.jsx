@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Search, ShoppingCart, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ onSearch }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +14,7 @@ const Navbar = ({ onSearch }) => {
   };
 
   return (
-    <nav className=" shadow-md fixed w-full top-3  left-0 z-50 ">
+    <nav className="shadow-md fixed w-full top-3 left-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Company Name */}
@@ -41,18 +42,24 @@ const Navbar = ({ onSearch }) => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            <a href="/about" className="text-white hover:text-blue-600 transition duration-300">
+            <Link
+              to="/about"
+              className="text-white hover:text-blue-600 transition duration-300"
+            >
               About
-            </a>
+            </Link>
             <div className="relative">
-              <a href="/cart" className="text-white hover:text-blue-600 transition duration-300 flex items-center">
+              <Link
+                to="/cart"
+                className="text-white hover:text-blue-600 transition duration-300 flex items-center"
+              >
                 <ShoppingCart className="h-6 w-6 mr-2" />
                 {cartCount > 0 && (
                   <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                     {cartCount}
                   </span>
                 )}
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -81,21 +88,21 @@ const Navbar = ({ onSearch }) => {
               />
               <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
             </div>
-            
+
             {/* Mobile Navigation Links */}
             <div className="space-y-2">
-              <a
-                href="/about"
+              <Link
+                to="/about"
                 className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-md transition duration-300"
               >
                 About
-              </a>
-              <a
-                href="/cart"
+              </Link>
+              <Link
+                to="/cart"
                 className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-md transition duration-300"
               >
                 Cart {cartCount > 0 && `(${cartCount})`}
-              </a>
+              </Link>
             </div>
           </div>
         )}
